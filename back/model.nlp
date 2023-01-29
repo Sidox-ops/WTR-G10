@@ -1,0 +1,1207 @@
+{
+  "settings": {
+    "languages": [
+      "fr"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "fr"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "fr": {
+        "settings": {
+          "locale": "fr",
+          "trainByDomain": false,
+          "tag": "domain-manager-fr",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "ce,moi,pour,ser,tout": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "au,revoir": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "a,okay,plus,tard": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "a,bientot": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "allez,je,vais,y": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bous,dispos,pouv": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bonjour": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "salut": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "wesh": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hol": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "coucou": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "de,inform,jaim,le,obten,sur,vehicul": {
+            "intent": "infos.vehicule",
+            "domain": "default"
+          },
+          "besoin,d,inform,ja,le,sur,vehicul": {
+            "intent": "infos.vehicule",
+            "domain": "default"
+          },
+          "aiguill,concern,le,m,pouv,vehicul,vous": {
+            "intent": "infos.vehicule",
+            "domain": "default"
+          },
+          "aid,con,de,en,je,m,ne,pad,pouv,term,vehicul,vous,y": {
+            "intent": "infos.vehicule",
+            "domain": "default"
+          },
+          "de,proposez-vous,quel,typ,vehicul": {
+            "intent": "infos.vehicule",
+            "domain": "default"
+          },
+          "routi": {
+            "intent": "usage.routier",
+            "domain": "default"
+          },
+          "routi,un,usag": {
+            "intent": "usage.routier",
+            "domain": "default"
+          },
+          "plutot,routi": {
+            "intent": "usage.routier",
+            "domain": "default"
+          },
+          "terrain,tout": {
+            "intent": "usage.tt",
+            "domain": "default"
+          },
+          "terrain,tout,un,usag": {
+            "intent": "usage.tt",
+            "domain": "default"
+          },
+          "plutot,terrain,tout": {
+            "intent": "usage.tt",
+            "domain": "default"
+          },
+          "sportif": {
+            "intent": "usage.sportif",
+            "domain": "default"
+          },
+          "sportif,un,usag": {
+            "intent": "usage.sportif",
+            "domain": "default"
+          },
+          "plutot,sportif": {
+            "intent": "usage.sportif",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.bye": "default",
+          "greetings.hello": "default",
+          "infos.vehicule": "default",
+          "usage.routier": "default",
+          "usage.tt": "default",
+          "usage.sportif": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "ce sera tout pour moi",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "au revoir",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "okay à plus tard",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "à bientôt",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "je vais y allez",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bous pouvez disposer",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bonjour",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "salut",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "wesh",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hola",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "coucou",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "jaimerais obtenir des informations sur les véhicules",
+            "intent": "infos.vehicule"
+          },
+          {
+            "domain": "default",
+            "utterance": "ja besoin d'informations sur les véhicules",
+            "intent": "infos.vehicule"
+          },
+          {
+            "domain": "default",
+            "utterance": "pouvez vous m’aiguiller concernant les véhicules",
+            "intent": "infos.vehicule"
+          },
+          {
+            "domain": "default",
+            "utterance": "je ne m'y connais pad en terme de véhicules pouvez vous m'aider",
+            "intent": "infos.vehicule"
+          },
+          {
+            "domain": "default",
+            "utterance": "quel type de véhicules proposez-vous",
+            "intent": "infos.vehicule"
+          },
+          {
+            "domain": "default",
+            "utterance": "routier",
+            "intent": "usage.routier"
+          },
+          {
+            "domain": "default",
+            "utterance": "un usage routier",
+            "intent": "usage.routier"
+          },
+          {
+            "domain": "default",
+            "utterance": "plutôt routier",
+            "intent": "usage.routier"
+          },
+          {
+            "domain": "default",
+            "utterance": "tout terrain",
+            "intent": "usage.tt"
+          },
+          {
+            "domain": "default",
+            "utterance": "un usage tout terrain",
+            "intent": "usage.tt"
+          },
+          {
+            "domain": "default",
+            "utterance": "plutôt tout terrain",
+            "intent": "usage.tt"
+          },
+          {
+            "domain": "default",
+            "utterance": "sportif",
+            "intent": "usage.sportif"
+          },
+          {
+            "domain": "default",
+            "utterance": "un usage sportif",
+            "intent": "usage.sportif"
+          },
+          {
+            "domain": "default",
+            "utterance": "plutôt sportif",
+            "intent": "usage.sportif"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "fr",
+              "tag": "nlu-fr",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "ce": 1,
+              "ser": 1,
+              "tout": 1,
+              "pour": 1,
+              "moi": 1,
+              "au": 1,
+              "revoir": 1,
+              "okay": 1,
+              "a": 1,
+              "plus": 1,
+              "tard": 1,
+              "bientot": 1,
+              "je": 1,
+              "vais": 1,
+              "y": 1,
+              "allez": 1,
+              "bous": 1,
+              "pouv": 1,
+              "dispos": 1,
+              "bonjour": 1,
+              "salut": 1,
+              "wesh": 1,
+              "hello": 1,
+              "hol": 1,
+              "coucou": 1,
+              "jaim": 1,
+              "obten": 1,
+              "de": 1,
+              "inform": 1,
+              "sur": 1,
+              "le": 1,
+              "vehicul": 1,
+              "ja": 1,
+              "besoin": 1,
+              "d": 1,
+              "vous": 1,
+              "m": 1,
+              "aiguill": 1,
+              "concern": 1,
+              "ne": 1,
+              "con": 1,
+              "pad": 1,
+              "en": 1,
+              "term": 1,
+              "aid": 1,
+              "quel": 1,
+              "typ": 1,
+              "proposez-vous": 1,
+              "routi": 1,
+              "un": 1,
+              "usag": 1,
+              "plutot": 1,
+              "terrain": 1,
+              "sportif": 1
+            },
+            "intents": {
+              "greetings.bye": 1,
+              "greetings.hello": 1,
+              "infos.vehicule": 1,
+              "usage.routier": 1,
+              "usage.tt": 1,
+              "usage.sportif": 1
+            },
+            "intentFeatures": {
+              "greetings.bye": {
+                "ce": 1,
+                "ser": 1,
+                "tout": 1,
+                "pour": 1,
+                "moi": 1,
+                "au": 1,
+                "revoir": 1,
+                "okay": 1,
+                "a": 1,
+                "plus": 1,
+                "tard": 1,
+                "bientot": 1,
+                "je": 1,
+                "vais": 1,
+                "y": 1,
+                "allez": 1,
+                "bous": 1,
+                "pouv": 1,
+                "dispos": 1
+              },
+              "greetings.hello": {
+                "bonjour": 1,
+                "salut": 1,
+                "wesh": 1,
+                "hello": 1,
+                "hol": 1,
+                "coucou": 1
+              },
+              "infos.vehicule": {
+                "jaim": 1,
+                "obten": 1,
+                "de": 1,
+                "inform": 1,
+                "sur": 1,
+                "le": 1,
+                "vehicul": 1,
+                "ja": 1,
+                "besoin": 1,
+                "d": 1,
+                "pouv": 1,
+                "vous": 1,
+                "m": 1,
+                "aiguill": 1,
+                "concern": 1,
+                "je": 1,
+                "ne": 1,
+                "y": 1,
+                "con": 1,
+                "pad": 1,
+                "en": 1,
+                "term": 1,
+                "aid": 1,
+                "quel": 1,
+                "typ": 1,
+                "proposez-vous": 1
+              },
+              "usage.routier": {
+                "routi": 1,
+                "un": 1,
+                "usag": 1,
+                "plutot": 1
+              },
+              "usage.tt": {
+                "tout": 1,
+                "terrain": 1,
+                "un": 1,
+                "usag": 1,
+                "plutot": 1
+              },
+              "usage.sportif": {
+                "sportif": 1,
+                "un": 1,
+                "usag": 1,
+                "plutot": 1
+              }
+            },
+            "featuresToIntent": {
+              "ce": [
+                "greetings.bye"
+              ],
+              "ser": [
+                "greetings.bye"
+              ],
+              "tout": [
+                "greetings.bye",
+                "usage.tt"
+              ],
+              "pour": [
+                "greetings.bye"
+              ],
+              "moi": [
+                "greetings.bye"
+              ],
+              "au": [
+                "greetings.bye"
+              ],
+              "revoir": [
+                "greetings.bye"
+              ],
+              "okay": [
+                "greetings.bye"
+              ],
+              "a": [
+                "greetings.bye"
+              ],
+              "plus": [
+                "greetings.bye"
+              ],
+              "tard": [
+                "greetings.bye"
+              ],
+              "bientot": [
+                "greetings.bye"
+              ],
+              "je": [
+                "greetings.bye",
+                "infos.vehicule"
+              ],
+              "vais": [
+                "greetings.bye"
+              ],
+              "y": [
+                "greetings.bye",
+                "infos.vehicule"
+              ],
+              "allez": [
+                "greetings.bye"
+              ],
+              "bous": [
+                "greetings.bye"
+              ],
+              "pouv": [
+                "greetings.bye",
+                "infos.vehicule"
+              ],
+              "dispos": [
+                "greetings.bye"
+              ],
+              "bonjour": [
+                "greetings.hello"
+              ],
+              "salut": [
+                "greetings.hello"
+              ],
+              "wesh": [
+                "greetings.hello"
+              ],
+              "hello": [
+                "greetings.hello"
+              ],
+              "hol": [
+                "greetings.hello"
+              ],
+              "coucou": [
+                "greetings.hello"
+              ],
+              "jaim": [
+                "infos.vehicule"
+              ],
+              "obten": [
+                "infos.vehicule"
+              ],
+              "de": [
+                "infos.vehicule"
+              ],
+              "inform": [
+                "infos.vehicule"
+              ],
+              "sur": [
+                "infos.vehicule"
+              ],
+              "le": [
+                "infos.vehicule"
+              ],
+              "vehicul": [
+                "infos.vehicule"
+              ],
+              "ja": [
+                "infos.vehicule"
+              ],
+              "besoin": [
+                "infos.vehicule"
+              ],
+              "d": [
+                "infos.vehicule"
+              ],
+              "vous": [
+                "infos.vehicule"
+              ],
+              "m": [
+                "infos.vehicule"
+              ],
+              "aiguill": [
+                "infos.vehicule"
+              ],
+              "concern": [
+                "infos.vehicule"
+              ],
+              "ne": [
+                "infos.vehicule"
+              ],
+              "con": [
+                "infos.vehicule"
+              ],
+              "pad": [
+                "infos.vehicule"
+              ],
+              "en": [
+                "infos.vehicule"
+              ],
+              "term": [
+                "infos.vehicule"
+              ],
+              "aid": [
+                "infos.vehicule"
+              ],
+              "quel": [
+                "infos.vehicule"
+              ],
+              "typ": [
+                "infos.vehicule"
+              ],
+              "proposez-vous": [
+                "infos.vehicule"
+              ],
+              "routi": [
+                "usage.routier"
+              ],
+              "un": [
+                "usage.routier",
+                "usage.tt",
+                "usage.sportif"
+              ],
+              "usag": [
+                "usage.routier",
+                "usage.tt",
+                "usage.sportif"
+              ],
+              "plutot": [
+                "usage.routier",
+                "usage.tt",
+                "usage.sportif"
+              ],
+              "terrain": [
+                "usage.tt"
+              ],
+              "sportif": [
+                "usage.sportif"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "fr",
+                "tag": "nlu-fr",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "ce",
+                "ser",
+                "tout",
+                "pour",
+                "moi",
+                "au",
+                "revoir",
+                "okay",
+                "a",
+                "plus",
+                "tard",
+                "bientot",
+                "je",
+                "vais",
+                "y",
+                "allez",
+                "bous",
+                "pouv",
+                "dispos",
+                "bonjour",
+                "salut",
+                "wesh",
+                "hello",
+                "hol",
+                "coucou",
+                "jaim",
+                "obten",
+                "de",
+                "inform",
+                "sur",
+                "le",
+                "vehicul",
+                "ja",
+                "besoin",
+                "d",
+                "vous",
+                "m",
+                "aiguill",
+                "concern",
+                "ne",
+                "con",
+                "pad",
+                "en",
+                "term",
+                "aid",
+                "quel",
+                "typ",
+                "proposez-vous",
+                "routi",
+                "un",
+                "usag",
+                "plutot",
+                "terrain",
+                "sportif"
+              ],
+              "intents": [
+                "greetings.bye",
+                "greetings.hello",
+                "infos.vehicule",
+                "usage.routier",
+                "usage.tt",
+                "usage.sportif"
+              ],
+              "perceptrons": [
+                [
+                  2.956793785095215,
+                  2.956793785095215,
+                  0.4813080132007599,
+                  2.956793785095215,
+                  2.956793785095215,
+                  6.152827262878418,
+                  6.152827262878418,
+                  1.7614308595657349,
+                  7.028757095336914,
+                  1.7614308595657349,
+                  1.7614308595657349,
+                  5.267056941986084,
+                  2.6563150882720947,
+                  3.497325897216797,
+                  2.6563150882720947,
+                  3.497325897216797,
+                  4.508598327636719,
+                  3.2893548011779785,
+                  4.508598327636719,
+                  -2.0128257274627686,
+                  -1.995943546295166,
+                  -1.9849883317947388,
+                  -1.978412389755249,
+                  -1.9741655588150024,
+                  -1.969533085823059,
+                  -0.1730393022298813,
+                  -0.1730393022298813,
+                  -1.2524404525756836,
+                  -0.3843497633934021,
+                  -0.3843497633934021,
+                  -0.7567099928855896,
+                  -1.8412209749221802,
+                  -0.1407240629196167,
+                  -0.1407240629196167,
+                  -0.1407240629196167,
+                  -1.2193851470947266,
+                  -1.2193851470947266,
+                  -0.29061195254325867,
+                  -0.29061195254325867,
+                  -0.8410990834236145,
+                  -0.8410990834236145,
+                  -0.8410990834236145,
+                  -0.8410990834236145,
+                  -0.8410990834236145,
+                  -0.8410990834236145,
+                  -0.12202965468168259,
+                  -0.12202965468168259,
+                  -0.12202965468168259,
+                  -1.987244725227356,
+                  -0.8923255205154419,
+                  -0.8923255205154419,
+                  -1.2709579467773438,
+                  -2.4747941493988037,
+                  -1.9673633575439453,
+                  1.9767110309344886
+                ],
+                [
+                  -0.809857964515686,
+                  -0.809857964515686,
+                  -3.8294591903686523,
+                  -0.809857964515686,
+                  -0.809857964515686,
+                  -3.408191680908203,
+                  -3.408191680908203,
+                  -1.1371870040893555,
+                  -3.988661766052246,
+                  -1.1371870040893555,
+                  -1.1371870040893555,
+                  -2.8258626461029053,
+                  -1.7980306148529053,
+                  -1.6140090227127075,
+                  -1.7980306148529053,
+                  -1.6140090227127075,
+                  -2.093657970428467,
+                  -2.6344454288482666,
+                  -2.093657970428467,
+                  7.414426326751709,
+                  7.4236979484558105,
+                  7.405045509338379,
+                  7.38499116897583,
+                  7.363547325134277,
+                  7.340734481811523,
+                  -0.33321884274482727,
+                  -0.33321884274482727,
+                  -1.5628541707992554,
+                  -0.8904868960380554,
+                  -0.8904868960380554,
+                  -1.2472525835037231,
+                  -2.3970742225646973,
+                  -0.477300763130188,
+                  -0.477300763130188,
+                  -0.477300763130188,
+                  -0.49887916445732117,
+                  -0.49887916445732117,
+                  -0.3091926574707031,
+                  -0.3091926574707031,
+                  -0.1274803876876831,
+                  -0.1274803876876831,
+                  -0.1274803876876831,
+                  -0.1274803876876831,
+                  -0.1274803876876831,
+                  -0.1274803876876831,
+                  -0.9656463265419006,
+                  -0.9656463265419006,
+                  -0.9656463265419006,
+                  -6.695103645324707,
+                  -1.42706298828125,
+                  -1.42706298828125,
+                  -2.326651096343994,
+                  -3.0050628185272217,
+                  -6.651010990142822,
+                  6.828581114123873
+                ],
+                [
+                  -0.09377245604991913,
+                  -0.09377245604991913,
+                  -0.5325219631195068,
+                  -0.09377245604991913,
+                  -0.09377245604991913,
+                  -0.20832286775112152,
+                  -0.20832286775112152,
+                  -0.11725779622793198,
+                  -0.32324448227882385,
+                  -0.11725779622793198,
+                  -0.11725779622793198,
+                  -0.1495208591222763,
+                  -0.024476949125528336,
+                  -0.3050185739994049,
+                  -0.024476949125528336,
+                  -0.3050185739994049,
+                  -0.5949147343635559,
+                  0.9362977147102356,
+                  -0.5949147343635559,
+                  -0.23284533619880676,
+                  -0.22861087322235107,
+                  -0.22421251237392426,
+                  -0.21999722719192505,
+                  -0.21694661676883698,
+                  -0.2159801721572876,
+                  0.32535335421562195,
+                  0.32535335421562195,
+                  2.7720296382904053,
+                  1.466264009475708,
+                  1.466264009475708,
+                  2.6338438987731934,
+                  5.0805230140686035,
+                  1.1409106254577637,
+                  1.1409106254577637,
+                  1.1409106254577637,
+                  1.541900873184204,
+                  1.541900873184204,
+                  1.1675794124603271,
+                  1.1675794124603271,
+                  0.3743216097354889,
+                  0.3743216097354889,
+                  0.3743216097354889,
+                  0.3743216097354889,
+                  0.3743216097354889,
+                  0.3743216097354889,
+                  2.0723559856414795,
+                  2.0723559856414795,
+                  2.0723559856414795,
+                  -0.597895622253418,
+                  -0.37163153290748596,
+                  -0.37163153290748596,
+                  -0.3990304470062256,
+                  -0.3914799690246582,
+                  -0.454978346824646,
+                  0.216088116467575
+                ],
+                [
+                  -0.04468401148915291,
+                  -0.04468401148915291,
+                  -1.6272239685058594,
+                  -0.04468401148915291,
+                  -0.04468401148915291,
+                  -0.45131197571754456,
+                  -0.45131197571754456,
+                  -0.212905153632164,
+                  -0.5822139978408813,
+                  -0.212905153632164,
+                  -0.212905153632164,
+                  -0.34223976731300354,
+                  -0.2629952132701874,
+                  -0.2462744116783142,
+                  -0.2629952132701874,
+                  -0.2462744116783142,
+                  -0.3002355098724365,
+                  -0.36644503474235535,
+                  -0.3002355098724365,
+                  -0.7983567118644714,
+                  -0.7953944802284241,
+                  -0.7922865748405457,
+                  -0.7890354990959167,
+                  -0.7856438755989075,
+                  -0.7821144461631775,
+                  -0.059792183339595795,
+                  -0.059792183339595795,
+                  -0.20724648237228394,
+                  -0.12618388235569,
+                  -0.12618388235569,
+                  -0.17904524505138397,
+                  -0.3190663456916809,
+                  -0.04931660369038582,
+                  -0.04931660369038582,
+                  -0.04931660369038582,
+                  -0.055126991122961044,
+                  -0.055126991122961044,
+                  -0.038969945162534714,
+                  -0.038969945162534714,
+                  -0.008270478807389736,
+                  -0.008270478807389736,
+                  -0.008270478807389736,
+                  -0.008270478807389736,
+                  -0.008270478807389736,
+                  -0.008270478807389736,
+                  -0.11615001410245895,
+                  -0.11615001410245895,
+                  -0.11615001410245895,
+                  12.776768684387207,
+                  0.3885659873485565,
+                  0.3885659873485565,
+                  0.9685716032981873,
+                  -1.558829665184021,
+                  -2.75229811668396,
+                  0.8249034866690792
+                ],
+                [
+                  -1.578886866569519,
+                  -1.578886866569519,
+                  6.059998512268066,
+                  -1.578886866569519,
+                  -1.578886866569519,
+                  -0.17651070654392242,
+                  -0.17651070654392242,
+                  -0.10973809659481049,
+                  -0.27032071352005005,
+                  -0.10973809659481049,
+                  -0.10973809659481049,
+                  -0.12839312851428986,
+                  -0.12513227760791779,
+                  -0.10496725142002106,
+                  -0.12513227760791779,
+                  -0.10496725142002106,
+                  -0.12217453867197037,
+                  -0.1822563260793686,
+                  -0.12217453867197037,
+                  -0.26377326250076294,
+                  -0.2630349099636078,
+                  -0.26225316524505615,
+                  -0.26142826676368713,
+                  -0.260560542345047,
+                  -0.25965046882629395,
+                  -0.04057524353265762,
+                  -0.04057524353265762,
+                  -0.11886223405599594,
+                  -0.08905097097158432,
+                  -0.08905097097158432,
+                  -0.13064950704574585,
+                  -0.20421954989433289,
+                  -0.03215023875236511,
+                  -0.03215023875236511,
+                  -0.03215023875236511,
+                  -0.04361698031425476,
+                  -0.04361698031425476,
+                  -0.025926664471626282,
+                  -0.025926664471626282,
+                  -0.00927573163062334,
+                  -0.00927573163062334,
+                  -0.00927573163062334,
+                  -0.00927573163062334,
+                  -0.00927573163062334,
+                  -0.00927573163062334,
+                  -0.04285934567451477,
+                  -0.04285934567451477,
+                  -0.04285934567451477,
+                  -1.3968305587768555,
+                  0.17802265286445618,
+                  0.17802265286445618,
+                  0.46404778957366943,
+                  7.640586853027344,
+                  -1.5628031492233276,
+                  0.27100631002544895
+                ],
+                [
+                  -0.17002417147159576,
+                  -0.17002417147159576,
+                  -1.5406264066696167,
+                  -0.17002417147159576,
+                  -0.17002417147159576,
+                  -0.4598335921764374,
+                  -0.4598335921764374,
+                  -0.233927920460701,
+                  -0.6169887185096741,
+                  -0.233927920460701,
+                  -0.233927920460701,
+                  -0.33736586570739746,
+                  -0.2904266119003296,
+                  -0.26520857214927673,
+                  -0.2904266119003296,
+                  -0.26520857214927673,
+                  -0.3042220175266266,
+                  -0.3922390937805176,
+                  -0.3042220175266266,
+                  -0.8008761405944824,
+                  -0.7980479598045349,
+                  -0.7950804829597473,
+                  -0.7919754385948181,
+                  -0.7887352705001831,
+                  -0.7853619456291199,
+                  -0.06348258256912231,
+                  -0.06348258256912231,
+                  -0.23342648148536682,
+                  -0.1594267040491104,
+                  -0.1594267040491104,
+                  -0.2242511659860611,
+                  -0.37895962595939636,
+                  -0.06582542508840561,
+                  -0.06582542508840561,
+                  -0.06582542508840561,
+                  -0.06445786356925964,
+                  -0.06445786356925964,
+                  -0.040922198444604874,
+                  -0.040922198444604874,
+                  -0.012340680696070194,
+                  -0.012340680696070194,
+                  -0.012340680696070194,
+                  -0.012340680696070194,
+                  -0.012340680696070194,
+                  -0.012340680696070194,
+                  -0.112542524933815,
+                  -0.112542524933815,
+                  -0.112542524933815,
+                  -2.651474714279175,
+                  0.39090853929519653,
+                  0.39090853929519653,
+                  0.9757001996040344,
+                  -1.3223263025283813,
+                  12.769190788269043,
+                  0.8279479144523454
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "fr",
+        "ce sera tout pour moi"
+      ],
+      [
+        "fr",
+        "au revoir"
+      ],
+      [
+        "fr",
+        "okay à plus tard"
+      ],
+      [
+        "fr",
+        "à bientôt"
+      ],
+      [
+        "fr",
+        "je vais y allez"
+      ],
+      [
+        "fr",
+        "bous pouvez disposer"
+      ],
+      [
+        "fr",
+        "bonjour"
+      ],
+      [
+        "fr",
+        "salut"
+      ],
+      [
+        "fr",
+        "wesh"
+      ],
+      [
+        "fr",
+        "hello"
+      ],
+      [
+        "fr",
+        "hola"
+      ],
+      [
+        "fr",
+        "coucou"
+      ],
+      [
+        "fr",
+        "jaimerais obtenir des informations sur les véhicules"
+      ],
+      [
+        "fr",
+        "ja besoin d'informations sur les véhicules"
+      ],
+      [
+        "fr",
+        "pouvez vous m’aiguiller concernant les véhicules"
+      ],
+      [
+        "fr",
+        "je ne m'y connais pad en terme de véhicules pouvez vous m'aider"
+      ],
+      [
+        "fr",
+        "quel type de véhicules proposez-vous"
+      ],
+      [
+        "fr",
+        "routier"
+      ],
+      [
+        "fr",
+        "un usage routier"
+      ],
+      [
+        "fr",
+        "plutôt routier"
+      ],
+      [
+        "fr",
+        "tout terrain"
+      ],
+      [
+        "fr",
+        "un usage tout terrain"
+      ],
+      [
+        "fr",
+        "plutôt tout terrain"
+      ],
+      [
+        "fr",
+        "sportif"
+      ],
+      [
+        "fr",
+        "un usage sportif"
+      ],
+      [
+        "fr",
+        "plutôt sportif"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "fr": {
+        "greetings.bye": [
+          {
+            "answer": "Au revoir et à bientôt"
+          },
+          {
+            "answer": "Au plaisir de vous revoir!"
+          }
+        ],
+        "greetings.hello": [
+          {
+            "answer": "Bonjour, en quoi puis-je vous aider"
+          }
+        ],
+        "infos.vehicule": [
+          {
+            "answer": "quel type d'utilisation vous intéresse ? (routier, tout-terrain, sportif, etc...)"
+          },
+          {
+            "answer": "quelle utilisation comptez vous en faire ? (routier, tout-terrain, sportif, etc...)"
+          },
+          {
+            "answer": "quel sera le type d'usage ? (routier, tout-terrain, sportif, etc...)"
+          }
+        ],
+        "usage.routier": [
+          {
+            "answer": "il a dit routier"
+          }
+        ],
+        "usage.tt": [
+          {
+            "answer": "il a dit tout terrain"
+          }
+        ],
+        "usage.sportif": [
+          {
+            "answer": "il a dit sportif"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

@@ -12,6 +12,8 @@ import ProductDetails from "./Pages/ProductDetails";
 import SignIn from "./Pages/SignIn";
 import Register from "./Pages/Register";
 import MyAccount from "./Pages/MyAccount";
+import './App.css';
+import ChatBotRobot from './Chatbot.component';
 
 
 function App() {
@@ -27,7 +29,10 @@ function App() {
         <ProductDetails path="product-details/:productId"/>
         <Cart path="/cart" />
       </Router>
+      <ChatBotRobot />
+
     </main>
+    
   );
 }
 
