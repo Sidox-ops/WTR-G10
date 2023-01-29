@@ -1,27 +1,65 @@
 const { NlpManager } = require('node-nlp');
 const socket = require('./app')
-const manager = new NlpManager({ languages: ['en'] });
+const manager = new NlpManager({ languages: ['fr'] });
 // 1 - Train the IA
 async function trainChatBotIA() {
     return new Promise(async (resolve, reject) => {
-        // Adds the utterances and intents for the NLP
-        // // Train also the NLG
-        // Adds the utterances and intents for the NLP
-        manager.addDocument('en', 'goodbye for now', 'greetings.bye');
-        manager.addDocument('en', 'bye bye take care', 'greetings.bye');
-        manager.addDocument('en', 'okay see you later', 'greetings.bye');
-        manager.addDocument('en', 'bye for now', 'greetings.bye');
-        manager.addDocument('en', 'i must go', 'greetings.bye');
-        manager.addDocument('en', 'hello', 'greetings.hello');
-        manager.addDocument('en', 'hi', 'greetings.hello');
-        manager.addDocument('en', 'howdy', 'greetings.hello');
-        manager.addDocument('en', 'raida', 'raida.couillon');
+        //Capter intention
+        // worflow salutation et au revoir
+        manager.addDocument('fr', 'ce sera tout pour moi', 'greetings.bye');
+        manager.addDocument('fr', 'au revoir', 'greetings.bye');
+        manager.addDocument('fr', 'okay à plus tard', 'greetings.bye');
+        manager.addDocument('fr', 'à bientôt', 'greetings.bye');
+        manager.addDocument('fr', 'je vais y allez', 'greetings.bye');
+        manager.addDocument('fr', 'bous pouvez disposer', 'greetings.bye');
+
+        manager.addDocument('fr', 'bonjour', 'greetings.hello');
+        manager.addDocument('fr', 'salut', 'greetings.hello');
+        manager.addDocument('fr', 'wesh', 'greetings.hello');
+        manager.addDocument('fr', 'hello', 'greetings.hello');
+        manager.addDocument('fr', 'hola', 'greetings.hello');
+        manager.addDocument('fr', 'coucou', 'greetings.hello');
+        
+        //workflow INFORMATION VEHICULE
+        //        
+
+        manager.addDocument('fr', 'j\aimerais obtenir des informations sur les véhicules', 'infos.vehicule');
+        manager.addDocument('fr', 'j\a besoin d\'informations sur les véhicules', 'infos.vehicule');
+        manager.addDocument('fr', 'pouvez vous m\’aiguiller concernant les véhicules', 'infos.vehicule');
+        manager.addDocument('fr', 'je ne m\'y connais pad en terme de véhicules pouvez vous m\'aider', 'infos.vehicule');
+        manager.addDocument('fr', 'quel type de véhicules proposez-vous', 'infos.vehicule');
+        manager.addDocument('fr', 'routier', 'usage.routier');
+        manager.addDocument('fr', 'un usage routier', 'usage.routier');
+        manager.addDocument('fr', 'plutôt routier', 'usage.routier');
+
+        manager.addDocument('fr', 'tout terrain', 'usage.tt');
+        manager.addDocument('fr', 'un usage tout terrain', 'usage.tt');
+        manager.addDocument('fr', 'plutôt tout terrain', 'usage.tt');
+
+        manager.addDocument('fr', 'sportif', 'usage.sportif');
+        manager.addDocument('fr', 'un usage sportif', 'usage.sportif');
+        manager.addDocument('fr', 'plutôt sportif', 'usage.sportif');
+
+
+
+
 // Train also the NLG
-        manager.addAnswer('en', 'greetings.bye', 'Till next time');
-        manager.addAnswer('en', 'greetings.bye', 'see you soon!');
-        manager.addAnswer('en', 'greetings.hello', 'Hey there!');
-        manager.addAnswer('en', 'raida.hello', 'Greetings!');
-        manager.addAnswer('en', 'raida.couillon', 'Couillon');
+        manager.addAnswer('fr', 'greetings.bye', 'Au revoir et à bientôt');
+        manager.addAnswer('fr', 'greetings.bye', 'Au plaisir de vous revoir!');
+        manager.addAnswer('fr', 'greetings.hello', 'Bonjour, en quoi puis-je vous aider');
+        //infos VEHICULE
+        manager.addAnswer('fr', 'infos.vehicule', 'quel type d\'utilisation vous intéresse ? (routier, tout-terrain, sportif, etc...)');
+        manager.addAnswer('fr', 'infos.vehicule', 'quelle utilisation comptez vous en faire ? (routier, tout-terrain, sportif, etc...)');
+        manager.addAnswer('fr', 'infos.vehicule', 'quel sera le type d\'usage ? (routier, tout-terrain, sportif, etc...)');
+
+        manager.addAnswer('fr', 'usage.routier', 'il a dit routier');
+        manager.addAnswer('fr', 'usage.tt', 'il a dit tout terrain');
+        manager.addAnswer('fr', 'usage.sportif', 'il a dit sportif');
+
+
+
+
+
 await manager.train();
         manager.save();
         console.log("AI has been trainded")
@@ -31,7 +69,7 @@ await manager.train();
 async function generateResponseAI(qsm) {
     // Train and save the mode
     return new Promise(async (resolve, reject) => {
-        response = await manager.process('en', qsm);
+        response = await manager.process('fr', qsm);
         resolve(response);
     })
 }
@@ -45,7 +83,7 @@ const connectWebSocket = (io) => {
 socket.on('new-msg', async function (data) {
             let response = await generateResponseAI(data.msg);
             io.to(data.room).emit('send-msg-response', response.answer !== undefined
-                ? response.answer : "I am sorry, I don't understand :( ");
+                ? response.answer : "Je ne suis pas sûr de comprendre :(, pouvez-vous répéter ");
         })
 });
 }

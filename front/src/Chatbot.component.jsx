@@ -18,7 +18,7 @@ class ChatBotRobot extends React.Component {
 
     UNSAFE_componentWillMount() {
         console.log("componentWillMount");
-        this._sendMessage("Hey there !");
+        this._sendMessage("Bonjour, en quoi puis-je vous aider ?");
     }
 
     componentDidMount() {
