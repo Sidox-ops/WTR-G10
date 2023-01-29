@@ -1,0 +1,23 @@
+version: '3'
+services:
+  node:
+    restart: always
+    build: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/code
+  mongo:
+    image: mongo
+    environment:
+      - PORT = 27017
+      - URL = http://localhost:27017
+      - MONGO_URL = mongodb://mongo:27017
+      - DB_NAME = test
+      - API_VERSION = v1
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+volumes:
+ mongodb:
