@@ -1,6 +1,8 @@
 import React from "react";
 import { Launcher } from 'react-chat-window'
 import io from 'socket.io-client';
+
+
 const socketIo = io("http://localhost:8080");
 class ChatBotRobot extends React.Component {
     constructor(props) {
@@ -23,8 +25,8 @@ class ChatBotRobot extends React.Component {
 
     componentDidMount() {
         socketIo.on("connect", () => {
-            console.log("RAIDA"+socketIo.id); // x8WIv7-mJelg7on_ALbx
-          });
+           
+        });
 
         this.state.socket.connect(true);
         this.state.socket.emit('join', this.state.room);
@@ -45,10 +47,12 @@ class ChatBotRobot extends React.Component {
             messageList: [...this.state.messageList, message]
         })
 
+        
+
         this._sendMessage("••••");
         await this.state.socket.emit('new-msg', { msg: message.data.text, room: this.state.room })
-        console.log("message", message)
-        console.log("socket", this.state.socket)
+        // console.log("message", message)
+        // console.log("socket", this.state.socket)
     }
 
     _sendMessage(text) {
