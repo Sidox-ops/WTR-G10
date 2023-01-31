@@ -17,15 +17,16 @@ const SignIn = () => {
         event.preventDefault();
         const username = form.username.value;
         const password = form.password.value;
+        console.log(username, password);
         if(username && password){
             setLoading(true);
-            fetch('https://fakestoreapi.com/auth/login',{
+            fetch('http://localhost:8080/auth/login',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body:JSON.stringify({
-                    username: username,
+                    email: username,
                     password: password
                 })
             }).then(res=>res.json())
