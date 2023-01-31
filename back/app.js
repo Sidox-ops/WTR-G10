@@ -8,6 +8,10 @@ const { Server } = require("socket.io");
 const cors = require("cors");
 const connectIo = require('./chatbotService');
 
+
+const Users = require('./models/users'); 
+
+
 app.use(cors());
 
 const port = process.env.PORT || 9000;
@@ -45,13 +49,27 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// console.log(connectIo);
-// console.log(io.sockets);
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+});
+
+app.post('/sign-up', (req, res) => {
+  const { email, password, firstName, lastName } = req.body;
+  const user = new Users({
+    email,
+    password,
+    firstName,
+    lastName
+  });
+  user.save();
+  res.send('User saved');
+});
 
 server.listen(port, () => {
   console.log("SERVER IS RUNNING ON PORT " + port + "");
 });
-io.on("connection", (socket) => {
-  console.log("USER CONNECTED "+ socket.id+""); // x8WIv7-mJelg7on_ALbx
+
+io.use((socket, next) => {
+  //check
 });
 
