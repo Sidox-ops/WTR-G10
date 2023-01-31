@@ -75,7 +75,7 @@ async function trainChatBotIA() {
         manager.addAnswer('fr', 'greetings.hello', 'Bonjour, en quoi puis-je vous aider');
 
         //infos ENTRETIEN
-        manager.addAnswer('fr', 'entretien.aborder', 'Quelle est la date du dernier entretien fait sur le véhicule svp ? (JJ/MM/YYYY)');
+        manager.addAnswer('fr', 'entretien.aborder', 'Quelle est la date du dernier entretien fait sur le véhicule svp ? (JJ-MM-YYYY)');
         manager.addDocument('fr', 'entretien.ok', 'Combien de kilomètre avez-vous fais depuis le dernier entretien ?');
         manager.addDocument('fr', 'entretien.vieux', 'On va vous donner un rdv bep bep beeep parce que là c\'est chaud');
 
