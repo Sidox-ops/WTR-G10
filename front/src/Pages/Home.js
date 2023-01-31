@@ -9,10 +9,18 @@ const Home = () => {
     const [theme] = useThemeHook();
     const [searchInput, setSearchInput] = useState('');
     const [productData, setProductData] = useState([]);
+    const [motoFailed, setMotoFailed] = useState(false);
 
     async function getResponse(){
-        const res = await fetch('https://fakestoreapi.com/products')
-                          .then(res=> res.json());
+        const res = await fetch('http://localhost:8080/api/moto')
+                          .then(res=> res.json())
+                          .catch(error=> {console.error(error); setMotoFailed(true)});
+
+        if (motoFailed) {
+            const res = await fetch('https://fakestoreapi.com/products')
+            .then(res=> res.json())
+            .catch(error=> {console.error(error); setMotoFailed(true)}); 
+        }
                           setProductData(await res);
     }
 
