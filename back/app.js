@@ -1,12 +1,13 @@
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const trainAI = require('./chatbotService');
+const trainAI = require('./chatbotService.js');
 const express = require("express");
 const app = express();
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
-const connectIo = require('./chatbotService');
+const connectIo = require('./chatbotService.js');
+const moment = require('moment');
 
 app.use(cors());
 
