@@ -7,14 +7,22 @@ const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
 const connectIo = require('./chatbotService');
+const mongoose = require('mongoose');
 
+const AuthRoute = require('./routes/auth');
 
-const Users = require('./models/users'); 
+mongoose.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true})
+const db = mongoose.connection;
 
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("Connected to database");
+});
 
-app.use(cors());
 
 const port = process.env.PORT || 9000;
+
+
 app.set('port', port);
 
 const server = http.createServer(app);
@@ -26,13 +34,14 @@ var io = new Server(server, {
 });
 connectIo.connectWebSocket(io);
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
+app.use('/auth', AuthRoute);
+
 
 
 //train the AI
@@ -53,16 +62,12 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
-app.post('/sign-up', (req, res) => {
-  const { email, password, firstName, lastName } = req.body;
-  const user = new Users({
-    email,
-    password,
-    firstName,
-    lastName
-  });
-  user.save();
-  res.send('User saved');
+//io middleware to check if user is authenticated
+io.use((socket, next) => {
+    if (socket.handshake.auth.token) {
+    return next();
+  }
+  return next(new Error('authentication error'));
 });
 
 server.listen(port, () => {
